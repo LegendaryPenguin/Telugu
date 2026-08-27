@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #4b4b4b;
+  font-family: "Nunito", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Script-specific webfonts render automatically wherever we tag the language.
+   Devanagari aids use lang="hi"; raw Telugu (rare in UI) uses lang="te". */
+[lang="hi"] {
+  font-family: "Noto Sans Devanagari", "Nunito", sans-serif;
+}
+[lang="te"] {
+  font-family: "Noto Sans Telugu", "Nunito", sans-serif;
+}
+
+/* Bigger, comfortable tap targets on mobile */
+button {
+  touch-action: manipulation;
+}
+
+/* Screens fade in on switch so navigation feels smooth, not a hard cut. */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fadein {
+  animation: fadein 180ms ease-out;
+}
+
+/* Mascot idle bob. */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+/* The "next" lesson node gently pulses to draw the eye, Duolingo-style. */
+@keyframes nodebounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-nodebounce {
+  animation: nodebounce 1.6s ease-in-out infinite;
+}
+
+/* Result footer slides up from the bottom. */
+@keyframes slideup {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.animate-slideup {
+  animation: slideup 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Respect the iPhone home-indicator / notch. */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.bottom-safe {
+  bottom: env(safe-area-inset-bottom);
+}
+
+/* Honor reduced-motion for anyone who asks for it. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+*.log
+*.tsbuildinfo
+
+# secrets
+.env
+.env.local
+server/.env
+
+# os
+.DS_Store

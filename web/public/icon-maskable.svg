@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Full-bleed teal background so it works as a maskable icon (safe zone = center 80%). -->
+  <rect width="512" height="512" fill="#0f766e"/>
+  <text x="256" y="340" font-size="260" text-anchor="middle" fill="#ffffff" font-family="Kohinoor Telugu, Telugu Sangam MN, Noto Sans Telugu, sans-serif">తె</text>
+</svg>
